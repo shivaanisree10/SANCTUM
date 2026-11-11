@@ -1,0 +1,65 @@
+policies:
+  - name: "NIST-Clear"
+    description: "NIST SP 800-88 Clear (Single Zero Pass)"
+    reference: "NIST SP 800-88 Rev. 1"
+    category: "Clear"
+    passes: ["ZERO"]
+    verification: "NONE"
+    applicable_media: ["ANY"]
+    version: "1.0"
+    advisory: "Provides clear-level sanitization. Does not protect against advanced lab recovery."
+
+  - name: "NIST-Clear-Random"
+    description: "NIST SP 800-88 Clear (Single Random Pass)"
+    reference: "NIST SP 800-88 Rev. 1"
+    category: "Clear"
+    passes: ["RANDOM"]
+    verification: "NONE"
+    applicable_media: ["ANY"]
+    version: "1.0"
+
+  - name: "DoD-3pass"
+    description: "DoD 5220.22-M (3-Pass)"
+    reference: "DoD 5220.22-M"
+    category: "Purge"
+    passes: ["ZERO", "ONES", "RANDOM"]
+    verification: "LAST_PASS"
+    applicable_media: ["MAGNETIC", "VIRTUAL"]
+    version: "1.0"
+    advisory: "Legacy standard. Not recommended for modern SSDs."
+
+  - name: "DoD-7pass"
+    description: "DoD 5220.22-M ECE (7-Pass)"
+    reference: "DoD 5220.22-M ECE"
+    category: "Purge"
+    passes: ["RANDOM", "ZERO", "ONES", "RANDOM", "ZERO", "ONES", "RANDOM"]
+    verification: "ALL_PASSES"
+    applicable_media: ["MAGNETIC", "VIRTUAL"]
+    version: "1.0"
+    advisory: "Excessively intensive. Severely degrades SSD lifespan."
+
+  - name: "VSITR"
+    description: "German BSI VSITR (7-Pass)"
+    reference: "BSI-G"
+    category: "Purge"
+    passes: ["ZERO", "ONES", "ZERO", "ONES", "ZERO", "ONES", "RANDOM"]
+    verification: "LAST_PASS"
+    applicable_media: ["MAGNETIC", "VIRTUAL"]
+    version: "1.0"
+    advisory: "Legacy standard."
+
+  - name: "Gutmann-35"
+    description: "Peter Gutmann's Algorithm (35-Pass)"
+    reference: "Secure Deletion of Data from Magnetic and Solid-State Memory"
+    category: "Purge"
+    passes: [
+      "RANDOM","RANDOM","RANDOM","RANDOM",
+      "ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES",
+      "ZERO","ONES","ZERO","ONES","ZERO","ONES","ZERO","ONES",
+      "RANDOM","RANDOM","RANDOM","RANDOM",
+      "RANDOM","RANDOM","RANDOM"
+    ]
+    verification: "NONE"
+    applicable_media: ["MAGNETIC"]
+    version: "1.0"
+    advisory: "Designed for old MFM/RLL drives. Unnecessary for modern media and extremely slow."

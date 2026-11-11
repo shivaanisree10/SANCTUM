@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sanctum"
+version = "0.1.0"
+description = "SANCTUM project"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.9.0",
+    "pydantic>=2.4.0",
+    "pyyaml>=6.0.1",
+    "PyQt6>=6.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.0.285",
+    "mypy>=1.5.1",
+    "black>=23.7.0",
+    "pre-commit>=3.4.0",
+]
+
+[project.scripts]
+sanctum = "sanctum.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["sanctum"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+select = ["E", "F", "B", "I"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

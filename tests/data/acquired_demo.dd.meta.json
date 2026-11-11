@@ -1,0 +1,32 @@
+{
+  "acquisition_id": "ACQ-4BDEE367",
+  "case_id": "CASE-DEMO",
+  "evidence_id": "EV-demo_test_disk.raw",
+  "examiner": "Examiner",
+  "description": "Forensic Acquisition of tests/data/demo_test_disk.raw",
+  "timestamp_started": "2026-11-09T15:24:40.896746+00:00",
+  "timestamp_completed": "2026-11-09T15:24:41.049496+00:00",
+  "source_serial": "VIRTUAL-demo_test_disk.raw",
+  "source_path": "tests/data/demo_test_disk.raw",
+  "source_capacity_bytes": 4194304,
+  "sector_size": 512,
+  "total_lbas": 8192,
+  "format": "RAW",
+  "segment_size_bytes": null,
+  "segments": [
+    "tests\\data\\acquired_demo.dd"
+  ],
+  "pre_source_sha256": "37810b1383b1b1bae6a85f037a496327a30548344b5bb3d9e9d010f1f7098b30",
+  "post_source_sha256": "37810b1383b1b1bae6a85f037a496327a30548344b5bb3d9e9d010f1f7098b30",
+  "source_hashes_match": true,
+  "image_sha256": "37810b1383b1b1bae6a85f037a496327a30548344b5bb3d9e9d010f1f7098b30",
+  "streaming_acquisition_sha256": "37810b1383b1b1bae6a85f037a496327a30548344b5bb3d9e9d010f1f7098b30",
+  "image_verification_passed": true,
+  "write_counter_before": 0,
+  "write_counter_after": 0,
+  "write_counter_delta": 0,
+  "write_blocking_verified": true,
+  "total_bad_sectors": 0,
+  "total_bad_bytes": 0,
+  "error_map_file": null
+}
