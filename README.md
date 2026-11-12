@@ -1,6 +1,6 @@
 # SANCTUM
 
-M0 Environment and Project Scaffold.
+Integrated Secure data erasure and file recovery tool
 
 ## Requirements
 - Python 3.11+
